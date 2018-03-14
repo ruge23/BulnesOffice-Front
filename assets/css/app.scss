@@ -16,21 +16,14 @@ figure{
     max-height: 100%;
     margin: 0px;
     figcaption{
-        padding: $large-padding;
-        font-weight: bold;
-        text-transform: uppercase;
-        font-size: 1.5em;
-        position: absolute;
-        letter-spacing: 5px;
-        width: auto;
-        bottom: 0px;
-        left: 10px;
-        z-index: 10;
-        @include text-center;
-        color: rgba($blue, 0.5);
+        @include caption;
     }
     img{
     }
+}
+
+.full-height{
+    min-height: 100vh;
 }
 
 .btn{
@@ -76,16 +69,8 @@ figure:hover{}
     "title title title title title title title title title"
     "image image image image image image image image image";
     .text{
-        font-weight: 200;
         grid-area: title;
-        font-size: 1.2em;
-        line-height: 1.5em;
-        h1{
-            font-weight: inherit;
-            font-size: $big;
-            letter-spacing: 0.3em;
-            line-height: 1.5em;
-        }
+        @include main-text;
     }
     .image{
         grid-area: image;
@@ -106,8 +91,33 @@ figure:hover{}
     &.parallax{
         background-image:url(../../public/images/img2.jpg);
         background-attachment: fixed;
+        position: relative;
+        p{
+            @include caption;
+            color: $grey;
+            background-color: rgba($blue, 0.8);
+            display: block;
+            width: 100%;
+            box-sizing: border-box;
+            left: 0px;
+            @include text-right;
+            span{
+                display: block;
+                font-size: 0.5em;
+                font-weight: 200;
+                margin-top: 6px;
+            }
+        }
     }
 }
+
+.mission{
+    align-items: center;
+    .container{
+        @include main-text;
+    }
+}
+
 
 @media (min-width: 960px){
     .container{

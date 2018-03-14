@@ -7,6 +7,10 @@
     text-align: center
 }
 
+@mixin text-right{
+    text-align: right;
+}
+
 @mixin center-vertical-horizontal{
     display: flex;
     align-items: center;
@@ -15,4 +19,31 @@
 
 @mixin absolute-cover{
     @include full;
+}
+
+@mixin caption{
+        padding: $large-padding;
+        font-weight: bold;
+        text-transform: uppercase;
+        font-size: 1.5em;
+        position: absolute;
+        letter-spacing: 5px;
+        width: auto;
+        bottom: 0px;
+        left: 10px;
+        z-index: 10;
+        @include text-center;
+        color: rgba($blue, 0.5);
+}
+
+@mixin main-text{
+    font-weight: 200;
+    font-size: 1.2em;
+    line-height: 1.5em;
+    h1{
+        font-weight: inherit;
+        font-size: $big;
+        letter-spacing: 0.3em;
+        line-height: 1.5em;
+    }
 }
