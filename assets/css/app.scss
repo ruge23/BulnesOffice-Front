@@ -59,7 +59,7 @@ figure:hover{}
 }
 
 
-//movile first
+//-------------------------movile first
 .grid-main-area{
     display: grid;
     grid-template-columns: repeat(9, 1fr);
@@ -111,7 +111,46 @@ figure:hover{}
     }
 }
 
+#slider-text-content{
+    @include transition;
+    &.hide{
+        opacity: 0;
+        transform: translateX(100px)
+    }
+}
+
+#slider-image{
+    @include transition;
+    &.hide{
+        opacity: 0;
+    }
+}
+
 .slider{
+    .controls{
+        text-align: right;
+        margin-bottom: 10px;
+        padding-right: 2em;
+        display: none;
+        .right-arrow,.left-arrow{
+            height: 50px;
+            @include transition;
+            transition-duration: 0.15s;
+            cursor: pointer;
+            &:hover{
+                opacity: 0.2;
+            }
+        }
+        .left-arrow{
+            margin-right: 1.5em;
+            transform: rotate(180deg);
+        }
+    }
+    image{
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+    }
     header{
         background-color: $blue;
         color:$white;
@@ -120,6 +159,8 @@ figure:hover{}
         width: 90%;
         box-sizing: border-box;
         margin: 0 auto;
+        z-index: 10;
+        position: relative;
         h2{
             margin: 0px;
         }
@@ -184,6 +225,8 @@ figure:hover{}
     }
 }
 
+
+//---------------------------------------------
 @media (min-width: 960px){
     
     .container{
