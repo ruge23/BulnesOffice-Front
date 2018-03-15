@@ -58,6 +58,37 @@ figure:hover{}
     grid-template-columns: repeat(12,1fr); 
 }
 
+.menu-screen{
+    background-color: white;
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    z-index: 100;
+    @include center-vertical-horizontal;
+    @include transition;
+    a{
+        display: block;
+        text-decoration: none;
+        @include text-center;
+        position: relative;
+        margin-top: 1em;
+        &:first-of-type{
+            margin-top: 0; 
+        }
+        .main{
+            display: block;
+            font-size: 2em;
+            color: $light-blue;
+        }
+        span:not(.main){
+            color: $rose;
+            opacity: 0;
+            @include transition;
+            transition-duration: 0.2s; 
+        }
+    }
+}
+
 
 //-------------------------movile first
 .grid-main-area{
@@ -208,6 +239,13 @@ figure:hover{}
             }
         }
     }
+}
+
+//-------------------mapa
+#mapa{
+    width: 100%;
+    min-height: 600px;
+    margin-top: $big-margin-top;
 }
 
 .social{

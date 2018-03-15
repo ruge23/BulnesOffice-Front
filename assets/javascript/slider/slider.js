@@ -21,6 +21,7 @@ export default class Slider{
         
         this.next = this.next.bind(this);
         this.prev = this.prev.bind(this);
+
     }
 
     innerNext(){
@@ -41,7 +42,6 @@ export default class Slider{
         this.innerNext();
         if(this.interval){
             this.stop();
-            this.play();
         }
     }
 
@@ -49,7 +49,6 @@ export default class Slider{
         this.innerPrev();
         if(this.interval){
             this.stop();
-            this.play();
         }
     }
 

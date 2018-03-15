@@ -4,10 +4,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>A basic webpage</title>
+    <title>OfficeBulnes</title>
 </head>
 <body>
-    <section>
+    <div class="menu-screen">
+        <nav>
+            <a href="#home">
+                <span class="main">Home</span>
+                <span>Know about us</span>
+            </a>
+            <a href="#about">
+                <span class="main">Products</span>
+                <span>Awesome stuff we offer</span>
+            </a>
+            <a href="#mission">
+                <span class="main">Mission</span>
+                <span>Why we're doing this</span>
+            </a>
+            <a href="#map">
+                <span class="main">Location</span>
+                <span>A mpa to fin us</span>
+            </a>
+            <a href="#social">
+                <span class="main">Contact us</span>
+                <span>We'd love to know about you</span>
+            </a>
+        </nav>
+    </div>
+    <section id="home">
         <div class="grid">
             <div class="container">
                 <div class="grid-main-area">
@@ -54,9 +78,8 @@
                         <p id="slider-subtitle" class="separator">Platillos</p>
                         <h2 id="slider-title">Lorem Ipsum</h2>
                         <p id="slider-text">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos doloremque distinctio dicta. 
-                            Perferendis quo recusandae blanditiis nulla ratione repudiandae dolorum iste perspiciatis deserunt. 
-                            Molestiae neque laborum iste enim hic nisi!
+                                Or maybe not. How about this: build in appropriate intersections and checkpoints between design and content. 
+                                Accept that it’s sometimes okay to focus just on the content or just on the design.
                         </p>
                     </div>
                 </header>
@@ -66,7 +89,7 @@
             </div>
         </div>
     </section>
-    <section>
+    <section id="mission">
         <div class="grid full-height mission">
             <div class="container">
                 <h1>Our mission</h1>
@@ -91,9 +114,12 @@
             </div>
         </div>
     </section>
+    <section id="map">
+        <div id="mapa"></div>
+    </section>
 
-    <section>
-            <div class="grid full-height social">
+    <section id="social">
+            <div class="grid social">
             <div class="container">
                 <p class="title">Contact us</p>
                 <a href="mailto:ruizgerer@gmail.com" class="btn"> Mail </a>
@@ -103,5 +129,10 @@
             </div>
         </div>
     </section>
+    
+    <!--script API Google Maps JS -->
+    <script 
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDw3Fz7loFE66MvwWn5xvcaPufzODK53u0">
+    </script>
 </body>
 </html>
