@@ -58,14 +58,52 @@ figure:hover{}
     grid-template-columns: repeat(12,1fr); 
 }
 
+.menu{
+    position: fixed;
+    top: 1.5em;
+    right: 2em;
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+    border: solid 1px $blue;
+    @include center-vertical-horizontal;
+    background-color: white;
+    @include transition;
+    transition-duration: 0.15s;
+
+    &:hover{
+        background-color: $light-blue;
+        cursor: pointer;
+    }
+
+    img{
+        height: 20px;
+    }
+}
+
 .menu-screen{
     background-color: white;
     height: 100vh;
     width: 100vw;
     position: fixed;
     z-index: 100;
+    top: -101vh;
     @include center-vertical-horizontal;
     @include transition;
+    z-index: 1001;
+
+    .close{
+        position: absolute;
+        top: 2em;
+        right: 3em;
+        img{
+            height: 25px;
+        }
+    }
+
+    &.active{
+        top:0;
+    }
     a{
         display: block;
         text-decoration: none;
@@ -85,6 +123,37 @@ figure:hover{}
             opacity: 0;
             @include transition;
             transition-duration: 0.2s; 
+        }
+
+        &::after{
+            content:'';
+            position: absolute;
+            top: 1.2em;
+            left:0;
+            width: 0%;
+            height: 2px;
+            background-color: $blue;
+            @include transition;
+            transition-duration: 0.2s;
+            //transform: scale(0);
+            /*
+            --our| => width de 0 a 100% en vez
+                        de escale de (0) a (1)
+            */ 
+        }
+
+        //efecto del span
+        &:hover span.main{
+            color: $blue !important;
+        }
+
+        &:hover::after{
+            width: 100%;
+            //transform: sacale(1);
+        }
+
+        &:hover span:not(.main){
+            opacity: 1;
         }
     }
 }
@@ -246,6 +315,8 @@ figure:hover{}
     width: 100%;
     min-height: 600px;
     margin-top: $big-margin-top;
+    z-index: -1;
+    position: relative;
 }
 
 .social{
