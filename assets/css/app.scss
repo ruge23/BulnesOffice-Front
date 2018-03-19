@@ -50,8 +50,6 @@ figure{
     }
 }
 
-figure:hover{}
-
 .grid{  
     display: grid;
     //divide el grid en 12 columnas
@@ -189,7 +187,6 @@ figure:hover{}
     background-position: center;
 
     &.parallax{
-        background-image:url(../../public/images/img2.jpg);
         background-attachment: fixed;
         position: relative;
         p{
@@ -304,6 +301,7 @@ figure:hover{}
                     height: 5px;
                     width: 70%;
                     z-index: -1;
+                    right: 1em;
                 }
             }
         }
